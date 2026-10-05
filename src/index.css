@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+@font-face {
+    font-family: yekanbakh;
+    src: url(../fonts/yekan\ bakh\ en\ 07\ heavy.ttf);
+}
+
+@font-face {
+    font-family: iransans;
+    src: url(../fonts/IRANSansWeb.tff);
+}
+
+body {
+    font-family: yekanbakh;
+}
+
+.font-thin-custome {
+    font-family: vazirmatn;
+}
+
+.span-w {
+    width: 35px;
+}
+
+.border-hov {
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.border-hov:hover {
+    border-color: gray;
+}
+
+.order-section {
+    margin-top: 300px;
+}
+
+@media (max-width: 768px) {
+
+    .respons-hide {
+        display: none;
+    }
+
+    nav>div {
+        justify-content: center;
+    }
+
+    .nav-right {
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .harise-img {
+        margin: 0 auto;
+    }
+
+
+    .res-cent {
+        height: auto;
+        min-height: 600px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .product-img {
+        width: 200px;
+        height: 200px;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    .res-cent>div {
+        width: 100%;
+    }
+
+    .res-cent p {
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .res-cent>div>div {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+
+    .order-container {
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 60px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-section {
+        order: 2;
+        width: 100%;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .order-section-dropdown {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .order-section p {
+        justify-content: center;
+    }
+
+    .order-section button {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+    .order-settings {
+        order: 1;
+        width: 100%;
+    }
+
+    .order-settings h2 {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .order-settings>div:first-of-type {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .order-settings .flex.gap-4 {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .suitable {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .serving {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pt-res {
+        padding-top: 15px;
+        padding-right: 10px;
+    }
+}
+
+/* انیمیشن باز شدن آکاردئون پنل کاربری */
+@keyframes panelOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-body:not(.hidden) {
+    animation: panelOpen 0.25s ease;
+}

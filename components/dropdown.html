@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>دراپ‌داون هریسه</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="../src/input.css">
+    <style>
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 p-10">
+
+    <div class="max-w-sm mx-auto space-y-6">
+
+        <div class="order-section">
+
+            <p class="py-3 px-3 flex font-black text-2xl justify-end">
+                ۷۵۰,۰۰۰
+
+                <span>
+                    <img src="../img/toman.svg" class="span-w ml-2 mr-1 mt-1" alt="">
+                </span>
+            </p>
+
+            <button id="togglef" onclick="toggleCustomize()"
+                class="text-center bg-green-800 text-white px-[130px] py-3 pt-5 rounded-full ml-1">
+                سفارشی سازی
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- بخش سفارشی سازی -->
+
+    <div class="max-w-sm mx-auto space-y-6 hidden" id="show">
+
+        <!-- Dropdown 1 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار پودر نارگیل چرب
+            </span>
+
+            <button type="button" onclick="toggle1()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text1" class="font-bold text-gray-800">
+                    بدون پودر نارگیل
+                </span>
+
+            </button>
+
+            <ul id="list1"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select1a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون پودر نارگیل
+                </li>
+                <li onclick="select1b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    کم
+                </li>
+                <li onclick="select1c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    زیاد
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 2 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار معجون مغذیات
+            </span>
+
+            <button type="button" onclick="toggle2()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text2" class="font-bold text-gray-800">
+                    بدون مغذیات
+                </span>
+
+            </button>
+
+            <ul id="list2"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select2a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون مغذیات
+                </li>
+                <li onclick="select2b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    کم
+                </li>
+                <li onclick="select2c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    زیاد
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 3 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle3()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text3" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list3"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select3a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select3b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select3c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select3d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 4 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle4()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text4" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list4"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select4a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select4b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select4c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select4d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 5 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle5()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text5" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list5"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select5a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select5b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select5c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select5d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 6 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle6()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text6" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list6"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select6a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select6b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select6c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select6d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 7 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle7()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text7" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list7"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select7a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select7b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select7c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select7d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 8 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle8()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text8" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list8"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select8a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select8b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select8c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select8d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 9 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle9()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text9" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list9"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select9a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select9b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select9c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select9d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 10 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle10()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text10" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list10"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select10a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select10b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select10c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select10d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 11 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle11()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text11" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list11"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select11a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select11b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select11c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select11d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Dropdown 12 -->
+        <div class="dropdown relative">
+
+            <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                مقدار قیمه
+            </span>
+
+            <button type="button" onclick="toggle12()"
+                class="drop-btn mt-4 w-full flex items-center justify-between border-2 border-emerald-600 rounded-xl px-3 py-3 bg-white text-right transition-colors">
+
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+
+                <span id="text12" class="font-bold text-gray-800">
+                    بدون قیمه
+                </span>
+
+            </button>
+
+            <ul id="list12"
+                class="hidden absolute top-full mt-1 w-full bg-emerald-50 rounded-lg overflow-hidden shadow-lg z-20 text-right">
+
+                <li onclick="select12a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                    بدون قیمه
+                </li>
+                <li onclick="select12b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    با قیمه
+                </li>
+                <li onclick="select12c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    پر قیمه
+                </li>
+                <li onclick="select12d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                    قیمه فراوان
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Add to cart -->
+
+        <button
+            class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-full transition-colors">
+            افزودن به سبد
+        </button>
+
+    </div>
+
+
+    <script>
+        const btnt = document.getElementById("togglef");
+        const toggleshow = document.getElementById("show");
+
+        btnt.addEventListener("click", () => {
+
+            btnt.classList.toggle("hidden");
+
+            toggleshow.classList.toggle("hidden");
+
+        });
+
+        // دکمه سفارشی سازی
+        function toggleCustomize() {
+            document.getElementById("show").classList.toggle("visible");
+        }
+
+
+        // دراپ داون 1
+        function toggle1() {
+            document.getElementById("list1").classList.toggle("hidden");
+        }
+        function select1a() {
+            document.getElementById("text1").innerText = "بدون پودر نارگیل";
+            document.getElementById("list1").classList.add("hidden");
+        }
+        function select1b() {
+            document.getElementById("text1").innerText = "کم";
+            document.getElementById("list1").classList.add("hidden");
+        }
+        function select1c() {
+            document.getElementById("text1").innerText = "زیاد";
+            document.getElementById("list1").classList.add("hidden");
+        }
+
+
+        // دراپ داون 2
+        function toggle2() {
+            document.getElementById("list2").classList.toggle("hidden");
+        }
+        function select2a() {
+            document.getElementById("text2").innerText = "بدون مغذیات";
+            document.getElementById("list2").classList.add("hidden");
+        }
+        function select2b() {
+            document.getElementById("text2").innerText = "کم";
+            document.getElementById("list2").classList.add("hidden");
+        }
+        function select2c() {
+            document.getElementById("text2").innerText = "زیاد";
+            document.getElementById("list2").classList.add("hidden");
+        }
+
+
+        // دراپ داون 3
+        function toggle3() {
+            document.getElementById("list3").classList.toggle("hidden");
+        }
+        function select3a() {
+            document.getElementById("text3").innerText = "بدون قیمه";
+            document.getElementById("list3").classList.add("hidden");
+        }
+        function select3b() {
+            document.getElementById("text3").innerText = "با قیمه";
+            document.getElementById("list3").classList.add("hidden");
+        }
+        function select3c() {
+            document.getElementById("text3").innerText = "پر قیمه";
+            document.getElementById("list3").classList.add("hidden");
+        }
+        function select3d() {
+            document.getElementById("text3").innerText = "قیمه فراوان";
+            document.getElementById("list3").classList.add("hidden");
+        }
+
+
+        // دراپ داون 4
+        function toggle4() {
+            document.getElementById("list4").classList.toggle("hidden");
+        }
+        function select4a() {
+            document.getElementById("text4").innerText = "بدون قیمه";
+            document.getElementById("list4").classList.add("hidden");
+        }
+        function select4b() {
+            document.getElementById("text4").innerText = "با قیمه";
+            document.getElementById("list4").classList.add("hidden");
+        }
+        function select4c() {
+            document.getElementById("text4").innerText = "پر قیمه";
+            document.getElementById("list4").classList.add("hidden");
+        }
+        function select4d() {
+            document.getElementById("text4").innerText = "قیمه فراوان";
+            document.getElementById("list4").classList.add("hidden");
+        }
+
+
+        // دراپ داون 5
+        function toggle5() {
+            document.getElementById("list5").classList.toggle("hidden");
+        }
+        function select5a() {
+            document.getElementById("text5").innerText = "بدون قیمه";
+            document.getElementById("list5").classList.add("hidden");
+        }
+        function select5b() {
+            document.getElementById("text5").innerText = "با قیمه";
+            document.getElementById("list5").classList.add("hidden");
+        }
+        function select5c() {
+            document.getElementById("text5").innerText = "پر قیمه";
+            document.getElementById("list5").classList.add("hidden");
+        }
+        function select5d() {
+            document.getElementById("text5").innerText = "قیمه فراوان";
+            document.getElementById("list5").classList.add("hidden");
+        }
+
+
+        // دراپ داون 6
+        function toggle6() {
+            document.getElementById("list6").classList.toggle("hidden");
+        }
+        function select6a() {
+            document.getElementById("text6").innerText = "بدون قیمه";
+            document.getElementById("list6").classList.add("hidden");
+        }
+        function select6b() {
+            document.getElementById("text6").innerText = "با قیمه";
+            document.getElementById("list6").classList.add("hidden");
+        }
+        function select6c() {
+            document.getElementById("text6").innerText = "پر قیمه";
+            document.getElementById("list6").classList.add("hidden");
+        }
+        function select6d() {
+            document.getElementById("text6").innerText = "قیمه فراوان";
+            document.getElementById("list6").classList.add("hidden");
+        }
+
+
+        // دراپ داون 7
+        function toggle7() {
+            document.getElementById("list7").classList.toggle("hidden");
+        }
+        function select7a() {
+            document.getElementById("text7").innerText = "بدون قیمه";
+            document.getElementById("list7").classList.add("hidden");
+        }
+        function select7b() {
+            document.getElementById("text7").innerText = "با قیمه";
+            document.getElementById("list7").classList.add("hidden");
+        }
+        function select7c() {
+            document.getElementById("text7").innerText = "پر قیمه";
+            document.getElementById("list7").classList.add("hidden");
+        }
+        function select7d() {
+            document.getElementById("text7").innerText = "قیمه فراوان";
+            document.getElementById("list7").classList.add("hidden");
+        }
+
+
+        // دراپ داون 8
+        function toggle8() {
+            document.getElementById("list8").classList.toggle("hidden");
+        }
+        function select8a() {
+            document.getElementById("text8").innerText = "بدون قیمه";
+            document.getElementById("list8").classList.add("hidden");
+        }
+        function select8b() {
+            document.getElementById("text8").innerText = "با قیمه";
+            document.getElementById("list8").classList.add("hidden");
+        }
+        function select8c() {
+            document.getElementById("text8").innerText = "پر قیمه";
+            document.getElementById("list8").classList.add("hidden");
+        }
+        function select8d() {
+            document.getElementById("text8").innerText = "قیمه فراوان";
+            document.getElementById("list8").classList.add("hidden");
+        }
+
+
+        // دراپ داون 9
+        function toggle9() {
+            document.getElementById("list9").classList.toggle("hidden");
+        }
+        function select9a() {
+            document.getElementById("text9").innerText = "بدون قیمه";
+            document.getElementById("list9").classList.add("hidden");
+        }
+        function select9b() {
+            document.getElementById("text9").innerText = "با قیمه";
+            document.getElementById("list9").classList.add("hidden");
+        }
+        function select9c() {
+            document.getElementById("text9").innerText = "پر قیمه";
+            document.getElementById("list9").classList.add("hidden");
+        }
+        function select9d() {
+            document.getElementById("text9").innerText = "قیمه فراوان";
+            document.getElementById("list9").classList.add("hidden");
+        }
+
+
+        // دراپ داون 10
+        function toggle10() {
+            document.getElementById("list10").classList.toggle("hidden");
+        }
+        function select10a() {
+            document.getElementById("text10").innerText = "بدون قیمه";
+            document.getElementById("list10").classList.add("hidden");
+        }
+        function select10b() {
+            document.getElementById("text10").innerText = "با قیمه";
+            document.getElementById("list10").classList.add("hidden");
+        }
+        function select10c() {
+            document.getElementById("text10").innerText = "پر قیمه";
+            document.getElementById("list10").classList.add("hidden");
+        }
+        function select10d() {
+            document.getElementById("text10").innerText = "قیمه فراوان";
+            document.getElementById("list10").classList.add("hidden");
+        }
+
+
+        // دراپ داون 11
+        function toggle11() {
+            document.getElementById("list11").classList.toggle("hidden");
+        }
+        function select11a() {
+            document.getElementById("text11").innerText = "بدون قیمه";
+            document.getElementById("list11").classList.add("hidden");
+        }
+        function select11b() {
+            document.getElementById("text11").innerText = "با قیمه";
+            document.getElementById("list11").classList.add("hidden");
+        }
+        function select11c() {
+            document.getElementById("text11").innerText = "پر قیمه";
+            document.getElementById("list11").classList.add("hidden");
+        }
+        function select11d() {
+            document.getElementById("text11").innerText = "قیمه فراوان";
+            document.getElementById("list11").classList.add("hidden");
+        }
+
+
+        // دراپ داون 12
+        function toggle12() {
+            document.getElementById("list12").classList.toggle("hidden");
+        }
+        function select12a() {
+            document.getElementById("text12").innerText = "بدون قیمه";
+            document.getElementById("list12").classList.add("hidden");
+        }
+        function select12b() {
+            document.getElementById("text12").innerText = "با قیمه";
+            document.getElementById("list12").classList.add("hidden");
+        }
+        function select12c() {
+            document.getElementById("text12").innerText = "پر قیمه";
+            document.getElementById("list12").classList.add("hidden");
+        }
+        function select12d() {
+            document.getElementById("text12").innerText = "قیمه فراوان";
+            document.getElementById("list12").classList.add("hidden");
+        }
+
+
+    </script>
+
+</body>
+
+</html>

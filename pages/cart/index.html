@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سبد خرید - هریسه</title>
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-stone-100">
+    <header class="sticky top-0 z-40 border-b border-stone-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
+            <h1 class="text-lg font-bold text-stone-900">سبد خرید</h1>
+            <a href="../Sefaresh/index.html" class="text-stone-500 hover:text-stone-700">
+                <i class="fa-solid fa-arrow-left"></i> ادامه خرید
+            </a>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-4xl px-4 py-8">
+        <div id="cartEmpty" class="text-center py-16">
+            <i class="fa-solid fa-cart-shopping mb-4 text-4xl text-stone-300"></i>
+            <p class="text-lg font-medium text-stone-700">سبد خرید شما خالی است</p>
+            <p class="mt-2 text-stone-500">از بین محصولات، کالای مورد نظرتان را اضافه کنید.</p>
+            <a href="../Sefaresh/index.html" class="inline-block mt-6 rounded-xl bg-green-800 px-6 py-3 text-white font-medium">رفتن به منو</a>
+        </div>
+
+        <div id="cartContent" class="hidden">
+            <div class="rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 overflow-hidden">
+                <ul id="cartList" class="divide-y divide-stone-100"></ul>
+            </div>
+
+            <div id="cartSummary" class="mt-4 rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 p-5">
+                <div class="flex justify-between text-sm mb-3">
+                    <span class="text-stone-600">جمع کل</span>
+                    <span id="cartTotal" class="font-bold text-stone-900">۰ تومان</span>
+                </div>
+                <p class="text-xs text-stone-500 mb-4">هزینه ارسال در مرحله بعد محاسبه می‌شود.</p>
+                <a href="#" class="flex items-center justify-center rounded-xl bg-green-800 px-5 py-3 text-sm font-bold text-white hover:bg-green-900">
+                    ادامه و پرداخت
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    const CART_KEY = 'hariseeh_cart';
+
+    function getCart() {
+        try {
+            return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        } catch {
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function formatPrice(num) {
+        return num.toLocaleString('fa-IR') + ' تومان';
+    }
+
+    function renderCart() {
+        const cart = getCart();
+        const list = document.getElementById('cartList');
+        const empty = document.getElementById('cartEmpty');
+        const content = document.getElementById('cartContent');
+        const totalEl = document.getElementById('cartTotal');
+
+        if (cart.length === 0) {
+            empty.classList.remove('hidden');
+            content.classList.add('hidden');
+            return;
+        }
+
+        empty.classList.add('hidden');
+        content.classList.remove('hidden');
+
+        list.innerHTML = cart.map((item, index) => `
+            <li class="flex items-center gap-3 px-5 py-4">
+                <div class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-stone-100 text-stone-400">
+                    <i class="fa-solid fa-bowl-rice text-xl"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <p class="truncate font-bold text-stone-900">${item.name}</p>
+                    <p class="text-sm text-stone-500">${item.serving || ''} - ${formatPrice(item.price)}</p>
+                </div>
+                <button onclick="removeItem(${index})" class="text-stone-400 hover:text-rose-600">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </li>
+        `).join('');
+
+        const total = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+        totalEl.textContent = formatPrice(total);
+    }
+
+    function removeItem(index) {
+        const cart = getCart();
+        cart.splice(index, 1);
+        saveCart(cart);
+        renderCart();
+    }
+
+    function addToCart(name, price, serving) {
+        const cart = getCart();
+        cart.push({ name, price, serving });
+        saveCart(cart);
+        renderCart();
+    }
+
+    // برای تست: دکمه اضافه کردن نمونه
+    window.addToCart = addToCart;
+
+    // رندر اولیه
+    renderCart();
+    </script>
+</body>
+</html>

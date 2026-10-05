@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>کارت هدیه | هریسه</title>
+
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="icon" href="https://hariseeh.ir/wp-content/uploads/Screenshot-2024-12-18-001736-min.svg">
+    <link rel="stylesheet" href="../../src/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div dir="rtl"
+        class="min-h-[60px] w-full bg-green-800 flex flex-wrap items-center justify-between px-10 py-3 gap-4">
+        <p class="text-white text-lg md:text-2xl">
+            250,000 هزار تومان اعتبار خرید
+            <span id="typed-text" class="text-amber-600 text-sm md:text-base block md:inline">با عضویت در سایت</span>
+        </p>
+        <button class="bg-green-950 px-10 py-2 rounded-3xl">
+            <a href="#" class="text-white">ثبت نام</a>
+        </button>
+    </div>
+
+    <nav>
+        <div class="flex items-center justify-between">
+            <div dir="ltr">
+                <ul class="flex list-none gap-8 ml-10 respons-hide">
+                    <li class="border border-green-200 rounded-lg hover:bg-green-100 transition-colors ">
+                        <a href="#" onclick="openBag(event)" class="py-1 px-3 text-green-600 transition-colors flex">
+                            سبد خرید
+                            <span>
+                                <img src="../../img/icons8-shopping-bag-32.png" class="w-4 mt-1 ml-2" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mt-1">
+                        <a href="../Login/index.html" class="text-black hover:text-amber-700 transition-colors">
+                            ورود/عضویت
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div dir="rtl" class="my-12 mr-24 flex items-center nav-right">
+                <img src="../../img/hariseeh.png" class="w-25 harise-img" alt="">
+                <ul class="flex list-none gap-8 mt-2 mr-3 respons-hide">
+                    <li>
+                        <a href="../menu/index.html" class="text-black hover:text-amber-700 transition-colors">
+                            منو
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-amber-600 hover:text-amber-700 transition-colors">
+                            کارت هدیه
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            شعب
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div dir="rtl" class="max-w-[1200px] mx-auto px-4 sm:px-6 py-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-stone-900 text-center">کارت هدیه</h1>
+        <p class="text-stone-500 text-center mt-2">Gift Cards</p>
+
+        <ul class="flex items-center justify-center gap-8 mt-8 text-stone-600">
+            <li>
+                <button type="button" id="filter-all" onclick="filterGifts('all')"
+                    class="font-bold text-green-800 border-b-2 border-green-800 pb-1">همه</button>
+            </li>
+            <li>
+                <button type="button" id="filter-work" onclick="filterGifts('work')"
+                    class="hover:text-green-800 transition-colors pb-1">محل کار</button>
+            </li>
+            <li>
+                <button type="button" id="filter-birthday" onclick="filterGifts('birthday')"
+                    class="hover:text-green-800 transition-colors pb-1">هدیه تولد</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+    <script src="../../src/typed.js"></script>
+    <script>
+        function filterGifts(cat) {
+            const cards = document.querySelectorAll(".gift-card");
+            for (let i = 0; i < cards.length; i++) {
+                if (cat === "all" || cards[i].getAttribute("data-cat") === cat) {
+                    cards[i].classList.remove("hidden");
+                } else {
+                    cards[i].classList.add("hidden");
+                }
+            }
+            const tabs = ["all", "work", "birthday"];
+            for (let i = 0; i < tabs.length; i++) {
+                const btn = document.getElementById("filter-" + tabs[i]);
+                if (tabs[i] === cat) {
+                    btn.className = "font-bold text-green-800 border-b-2 border-green-800 pb-1";
+                } else {
+                    btn.className = "hover:text-green-800 transition-colors pb-1";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> منو | هریسه</title>
+
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="icon" href="https://hariseeh.ir/wp-content/uploads/Screenshot-2024-12-18-001736-min.svg">
+    <link rel="stylesheet" href="../../src/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div dir="rtl"
+        class="min-h-[60px] w-full bg-green-800 flex flex-wrap items-center justify-between px-10 py-3 gap-4">
+        <p class="text-white text-lg md:text-2xl">
+            250,000 هزار تومان اعتبار خرید
+            <span id="typed-text" class="text-amber-600 text-sm md:text-base block md:inline">با عضویت در سایت</span>
+        </p>
+        <button class="bg-green-950 px-10 py-2 rounded-3xl">
+            <a href="#" class="text-white">ثبت نام</a>
+        </button>
+    </div>
+
+
+    <nav>
+        <div class="flex items-center justify-between">
+            <div dir="ltr">
+                <ul class="flex list-none gap-8 ml-10 respons-hide">
+                    <li class="border border-green-200 rounded-lg hover:bg-green-100 transition-colors ">
+                        <a href="#" onclick="openBag(event)" class="py-1 px-3 text-green-600 transition-colors flex">
+                            سبد خرید
+                            <span>
+                                <img src="../../img/icons8-shopping-bag-32.png" class="w-4 mt-1 ml-2" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mt-1">
+                        <a href="../Login/index.html" class="text-black hover:text-amber-700 transition-colors">
+                            ورود/عضویت
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div dir="rtl" class="my-12 mr-24 flex items-center nav-right">
+                <img src="../../img/hariseeh.png" class="w-25 harise-img" alt="">
+                <ul class="flex list-none gap-8 mt-2 mr-3 respons-hide">
+                    <li>
+                        <a href="#" class="text-amber-600 hover:text-amber-700 transition-colors">
+                            منو
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            کارت هدیه
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            شعب
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="max-w-[1440px] w-full mx-auto px-4 md:px-6 py-6 md:py-10 mb-10" dir="rtl">
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-900 text-right mb-6">منو</h2>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            <aside class="w-full md:w-64 shrink-0">
+                <ul class="list-disc pr-5">
+                    <li>
+                        <h4 class="text-lg font-bold text-stone-900">حلیم</h4>
+                        <ul class="list-disc pr-5 mt-1 space-y-1">
+                            <li><a href="../Sefaresh/index.html" class="hover:text-amber-700 transition-colors">هریسه
+                                    گندم اصیل</a></li>
+                            <li><a href="../SefareshMilkHarise/index.html"
+                                    class="hover:text-amber-700 transition-colors">هریسه شیر اصیل</a></li>
+                            <li><a href="../Sefaresh-gandomparvaz/index.html"
+                                    class="hover:text-amber-700 transition-colors">هریسه گندم پرواز</a></li>
+                            <li><a href="../sefaresh-shirparvaz/index.html"
+                                    class="hover:text-amber-700 transition-colors">هریسه شیر پرواز</a></li>
+                        </ul>
+                    </li>
+                    <li class="mt-3">
+                        <h4 class="text-lg font-bold text-stone-900">شیربرنج</h4>
+                        <ul class="list-disc pr-5 mt-1 space-y-1">
+                            <li><a href="../Sefaresh-bahtiyeh/index.html" class="hover:text-amber-700 transition-colors">بحتیه دزفولی</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="w-full max-w-[1400px]">
+                <div class="flex-1">
+                    <div>
+                        <h1 class="text-base sm:text-3xl text-black mt-5 ml-3" dir="rtl">
+                            حلیم
+                        </h1>
+                        <div class="w-full max-w-[1300px] border-t border-gray-400 mx-auto mt-2 pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
+                            dir="rtl">
+                            <a href="../Sefaresh/index.html" class="flex items-center gap-3">
+                                <img src="../../img/haleem200.jpg" class="w-25 h-25 rounded-xl object-cover border-1"
+                                    alt="هریسه گندم اصیل">
+                                <div class="pt-7">
+                                    <p class="font-bold text-lg text-stone-900">هریسه گندم اصیل</p>
+                                    <p class="text-xs text-stone-500 mt-1">حلیم</p>
+                                </div>
+                            </a>
+                            <a href="../SefareshMilkHarise/index.html" class="flex items-center gap-3">
+                                <img src="../../img/haleem100-150x150.jpg" class="w-25 h-25 rounded-xl object-cover border-1"
+                                    alt="هریسه شیر اصیل">
+                                <div class="pt-7">
+                                    <p class="font-bold text-lg text-stone-900">هریسه شیر اصیل</p>
+                                    <p class="text-xs text-stone-500 mt-1">حلیم</p>
+                                </div>
+                            </a>
+                            <a href="../Sefaresh-gandomparvaz/index.html" class="flex items-center gap-3">
+                                <img src="../../img/haleem200-150x150.jpg" class="w-25 h-25 rounded-xl object-cover border-1"
+                                    alt="هریسه گندم پرواز">
+                                <div class="pt-7">
+                                    <p class="font-bold text-lg text-stone-900">هریسه گندم پرواز</p>
+                                    <p class="text-xs text-stone-500 mt-1">حلیم</p>
+                                </div>
+                            </a>
+                            <a href="../sefaresh-shirparvaz/index.html" class="flex items-center gap-3">
+                                <img src="../../img/haleem100-150x150.jpg" class="w-25 h-25 rounded-xl object-cover border-1"
+                                    alt="هریسه شیر پرواز">
+                                <div class="pt-7">
+                                    <p class="font-bold text-lg text-stone-900">هریسه شیر پرواز</p>
+                                    <p class="text-xs text-stone-500 mt-1">حلیم</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div>
+                        <h1 class="text-base sm:text-3xl text-black mt-5 ml-3" dir="rtl">
+                            حلیم
+                        </h1>
+                        <div class="w-full max-w-[1300px] border-t border-gray-400 mx-auto mt-2 pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
+                            dir="rtl">
+                            <a href="../Sefaresh-bahtiyeh/index.html" class="flex items-center gap-3">
+                                <img src="../../img/shir-berenj-150x150.jpg" class="w-25 h-25 rounded-xl object-cover border-1"
+                                    alt="بحتیه دزفولی">
+                                <div class="pt-7">
+                                    <p class="font-bold text-lg text-stone-900">بحتیه دزفولی</p>
+                                    <p class="text-xs text-stone-500 mt-1">شیر برنج</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <section class=" bottom-0 left-0">
+        <div class="w-full h-1 bg-amber-700  left-0">
+        </div>
+        <footer dir="rtl" class="w-full bg-black border-t-[5px] border-[#DA6D57]">
+            <div class="mx-auto w-full max-w-[1200px] px-5 pb-[20px] pt-[50px] max-md:p-5">
+                <div class="flex flex-wrap items-center justify-between gap-10 text-right">
+
+            <div class="flex flex-wrap gap-10 lg:gap-20 xl:gap-32 text-right">
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">با هریسه</li>
+                    <li class="mb-[5px]">فرصت های شغلی</li>
+                    <li class="mb-[5px]">اخذ نمایندگی</li>
+                    <li class="mb-[5px]">تماس با هریسه</li>
+                    <li class="mb-[5px]">مجله هریسه</li>
+                </ul>
+
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">خدمات مشتریان</li>
+                    <li class="mb-[5px]">رویه های خرید و سفارش</li>
+                    <li class="mb-2 ">پرسش های متداول </li>
+                    <li class="mb-[5px]">قوانین و مقررات</li>
+                    <li class="mb-[5px]">حریم خصوصی و امنیت</li>
+                </ul>
+
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">همراه ما باشید!</li>
+                    <li class="mb-[5px]"><span><i class="fab fa-instagram ml-[15px] text-white"></i></span>اینستاگرام</li>
+                    <li class="mb-[5px]"><span><i class="fab fa-threads ml-[15px] text-white"></i></span> تردز</li>
+                    <li class="mb-[5px]"><span><i class="far fa-grin-wink ml-[15px] text-white"></i>پلتفرم خرید باسلام</span></li>
+                </ul>
+            </div>
+
+
+            <div class="flex flex-wrap items-center gap-6 max-md:justify-center">
+                <img src="../../img/unnamed-1-1.png" alt="اینماد۱">
+                <img src="../../img/logo.png" alt="اینماد۱">
+
+            </div>
+            <div class="w-full border-t border-[rgba(255,255,255,0.25)] mt-20">
+                <div class="flex items-center justify-between pt-5">
+                    <p class="text-[14px] md:text-[13px] font-light text-[rgba(255,255,255,0.39)] text-center sm:text-right">
+                        1405@ کلیه حقوق این سایت متعلق به شرکت تجارت الکترونیک هوبر آوا است.
+                    </p>
+                    <img src="../../img/hariseeh.png" class="w-[70px] md:w-[120px]" alt="">
+                </div>
+            </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+
+    <!-- بگ سبد خرید -->
+    <div id="bagModal"
+        class="hidden fixed inset-0 z-[100] flex items-start justify-center bg-stone-900/40 p-4 sm:items-center">
+        <div class="flex max-h-full w-full max-w-md">
+            <div class="flex w-full flex-col overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-stone-200">
+                <div class="head flex items-center justify-between gap-3 border-b border-stone-200 px-5 py-4">
+                    <div dir="rtl">
+                        <h2 class="text-lg font-bold text-stone-900">سبد خرید</h2>
+                        <p class="text-sm text-stone-500"><span id="bagCount2">۰</span> کالا</p>
+                    </div>
+                    <button onclick="document.getElementById('bagModal').classList.add('hidden')"
+                        class="grid h-9 w-9 place-items-center rounded-full text-stone-500 hover:bg-stone-100">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div id="bagShop2" class="flex-1 overflow-y-auto"></div>
+                <div id="bagEmpty2" class="px-5 py-12 text-center">
+                    <i class="fa-solid fa-cart-shopping mb-3 text-3xl text-stone-300"></i>
+                    <p class="text-sm font-medium text-stone-700">سبد خرید شما خالی است</p>
+                </div>
+                <div id="bagCheckout2" class="hidden space-y-3 border-t border-stone-200 bg-stone-50 px-5 py-4">
+                    <div class="flex items-baseline justify-between">
+                        <span class="text-sm text-stone-600">جمع کل</span>
+                        <p class="text-xl font-bold text-stone-900"><span id="bagPrice2">۰</span> <span
+                                class="text-sm font-medium text-stone-500">تومان</span></p>
+                    </div>
+                    <a href=""
+                        class="flex items-center justify-center rounded-xl bg-green-800 px-5 py-3 text-sm font-bold text-white">ادامه
+                        و پرداخت</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // دکمه سبد خرید - باز کردن بگ
+        function openBag(e) {
+            if (e) e.preventDefault();
+            document.getElementById("bagModal").classList.remove("hidden");
+            if (typeof updateBag2 === 'function') updateBag2();
+        }
+    </script>
+    <script src="../../src/typed.js"></script>
+</body>
+
+</html>

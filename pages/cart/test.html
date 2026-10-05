@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>هریسه گندم اصیل | هریسه</title>
+
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="icon" href="https://hariseeh.ir/wp-content/uploads/Screenshot-2024-12-18-001736-min.svg">
+    <link rel="stylesheet" href="../../src/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../src/SResponsive.css">
+    
+
+</head>
+
+<body>
+    <div dir="rtl"
+        class="min-h-[60px] w-full bg-green-800 flex flex-wrap items-center justify-between px-4 sm:px-10 md:pr-20 py-3 gap-4">
+
+        <p class="text-white text-base sm:text-lg md:text-2xl sm:mr-[50px]">
+            250,000 هزار تومان اعتبار خرید
+            <span id="typed-text" class="text-amber-600 text-sm md:text-base block md:inline">
+                با عضویت در سایت
+            </span>
+        </p>
+
+        <button class="bg-green-950 sm:px-10 px-6 py-1 rounded-3xl">
+            <a href="#" class="text-white">ثبت نام</a>
+        </button>
+    </div>
+
+    <nav>
+        <div class="flex items-center justify-between flex-wrap">
+            <div dir="ltr">
+                <ul class="flex list-none gap-4 md:gap-8 ml-4 md:ml-10 respons-hide">
+                    <li class="border border-green-200 rounded-lg hover:bg-green-100 transition-colors ">
+                        <a href="#" class="py-1 px-3 text-green-600 transition-colors flex">
+                            سبد خرید<p id="cartquantity" class="text-black"></p>
+                            <span>
+                                <img src="../../img/icons8-shopping-bag-32.png" class="w-4 mt-1 ml-2" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mt-1">
+                        <a href="../Login/index.html" class="text-black hover:text-amber-700 transition-colors">
+                            ورود/عضویت
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div dir="rtl" class="my-6 md:my-12 mr-4 md:mr-24 flex items-center nav-right">
+                <img src="../../img/hariseeh.png" class="w-20 md:w-25 harise-img" alt="">
+                <ul class="flex list-none gap-4 md:gap-8 mt-2 mr-3 respons-hide">
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            منو
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            کارت هدیه
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            شعب
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div
+        class="min-h-[350px] bg-[#1F3933] w-full flex flex-col md:flex-row justify-end items-center md:items-stretch res-cent px-4 md:px-0 py-6 md:py-0">
+        <div class="order-2 md:order-1">
+            <p
+                class="text-2xl sm:text-3xl md:text-4xl text-white mt-4 md:mt-30 mr-0 md:mr-10 text-center md:text-right">
+                هریسه گندم اصیل
+            </p>
+            <p class="text-lg sm:text-xl text-white mt-3 md:mt-5 mr-0 md:mr-10 text-center md:text-right" dir="rtl">
+                ۵۰۰۰۰۰ تومان
+            </p>
+            <div class="flex ml-0 md:ml-15 justify-center md:justify-start">
+                <span class="pt-res pt-6">
+                    <i class="fas fa-info-circle" style="color: white;"></i>
+                </span>
+                <p class="text-base sm:text-lg text-white mt-5 ml-3" dir="rtl">
+                    325 کیلوکالری در هر پرس
+                </p>
+            </div>
+        </div>
+        <img src="../../img/haleem200.jpg"
+            class="order-1 md:order-2 h-32 sm:h-40 md:h-50 mt-4 md:mt-19 mr-0 md:mr-60 rounded-2xl product-img" alt="">
+    </div>
+    <div id="togglehide"
+        class=" flex flex-col lg:flex-row flex-wrap justify-between items-start gap-8 md:gap-16 mt-10 md:mt-[80px] px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1400px] mx-auto order-container">
+        <div class="order-section w-full md:w-auto ml-20" id="togglef">
+            <p id="mainPrice" class="py-3 px-3 flex font-black text-2xl justify-center md:justify-start">
+                <span>
+                    <img src="../../img/toman.svg" class="span-w ml-2 mr-1 mt-1" alt="">
+                </span>
+                <span id="mainPriceValue">۷۵۰,۰۰۰</span>
+            </p>
+            <button onclick="toggleCustomize()"
+                class="text-center bg-green-800 text-white w-full md:px-[180px] py-3 pt-5 rounded-full md:ml-1">
+                <a href="#"> سفارشی سازی</a>
+            </button>
+        </div>
+        <!-- بخش سبد خرید -->
+
+        <!-- بخش سفارشی سازی -->
+
+        <div class="w-full sm:w-96 max-w-full mx-auto md:mx-0 md:flex-shrink-0 space-y-6 hidden" id="show">
+            <div class="" dir="rtl">
+                <h2 class="text-2xl">
+                    انتخاب افزودنی ها
+                </h2>
+                <div class="bg-green-700 h-[5px] w-full max-w-[400px] opacity-30"></div>
+            </div>
+
+            <!-- Dropdown 1 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار خامه مخصوص
+                </span>
+
+                <button type="button" onclick="toggle1()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text1" class="font-bold text-gray-800">
+                        بدون خامه
+                    </span>
+
+                </button>
+
+                <ul id="list1" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select1a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون خامه
+                    </li>
+                    <li onclick="select1b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با خامه
+                    </li>
+                    <li onclick="select1c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر خامه
+                    </li>
+                    <li onclick="select1d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        خامه فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 2 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار سرشیر مخصوص
+                </span>
+
+                <button type="button" onclick="toggle2()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text2" class="font-bold text-gray-800">
+                        بدون سرشیر
+                    </span>
+
+                </button>
+
+                <ul id="list2" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select2a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون سرشیر
+                    </li>
+                    <li onclick="select2b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با سرشیر
+                    </li>
+                    <li onclick="select2c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر سرشیر
+                    </li>
+                    <li onclick="select2d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        سرشیر فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 3 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار روغن حیوانی
+                </span>
+
+                <button type="button" onclick="toggle3()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text3" class="font-bold text-gray-800">
+                        بدون روغن
+                    </span>
+
+                </button>
+
+                <ul id="list3" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select3a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون روغن
+                    </li>
+                    <li onclick="select3b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با روغن
+                    </li>
+                    <li onclick="select3c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر روغن
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 4 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار دارچین
+                </span>
+
+                <button type="button" onclick="toggle4()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text4" class="font-bold text-gray-800">
+                        بدون دارچین
+                    </span>
+
+                </button>
+
+                <ul id="list4" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select4a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون دارچین
+                    </li>
+                    <li onclick="select4b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با دارچین
+                    </li>
+                    <li onclick="select4c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر دارچین
+                    </li>
+                    <li onclick="select4d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        دارچین فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 5 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار کنجد
+                </span>
+
+                <button type="button" onclick="toggle5()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text5" class="font-bold text-gray-800">
+                        بدون کنجد
+                    </span>
+
+                </button>
+
+                <ul id="list5" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select5a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون کنجد
+                    </li>
+                    <li onclick="select5b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با کنجد
+                    </li>
+                    <li onclick="select5c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر کنجد
+                    </li>
+                    <li onclick="select5d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        کنجد فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 6 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار شکر سفید
+                </span>
+
+                <button type="button" onclick="toggle6()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text6" class="font-bold text-gray-800">
+                        بدون شکر سفید
+                    </span>
+
+                </button>
+
+                <ul id="list6" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select6a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون شکر سفید
+                    </li>
+                    <li onclick="select6b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با شکر
+                    </li>
+                    <li onclick="select6c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر شکر
+                    </li>
+                    <li onclick="select6d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        شکر فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 7 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار شکر قهوه‌ای
+                </span>
+
+                <button type="button" onclick="toggle7()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text7" class="font-bold text-gray-800">
+                        بدون شکر قهوه‌ای
+                    </span>
+
+                </button>
+
+                <ul id="list7" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select7a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون شکر قهوه‌ای
+                    </li>
+                    <li onclick="select7b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با شکر قهوه‌ای
+                    </li>
+                    <li onclick="select7c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر شکر قهوه‌ای
+                    </li>
+                    <li onclick="select7d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        شکر قهوه‌ای فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 8 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار عسل طبیعی
+                </span>
+
+                <button type="button" onclick="toggle8()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text8" class="font-bold text-gray-800">
+                        بدون عسل
+                    </span>
+
+                </button>
+
+                <ul id="list8" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select8a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون عسل
+                    </li>
+                    <li onclick="select8b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با عسل
+                    </li>
+                    <li onclick="select8c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر عسل
+                    </li>
+                    <li onclick="select8d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        عسل فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 9 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار پودر نارگیل چرب
+                </span>
+
+                <button type="button" onclick="toggle9()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text9" class="font-bold text-gray-800">
+                        بدون پودر نارگیل
+                    </span>
+
+                </button>
+
+                <ul id="list9" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select9a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون پودر نارگیل
+                    </li>
+                    <li onclick="select9b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با نارگیل
+                    </li>
+                    <li onclick="select9c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر نارگیل
+                    </li>
+                    <li onclick="select9d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        نارگیل فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 10 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار معجون مغزیجات
+                </span>
+
+                <button type="button" onclick="toggle10()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text10" class="font-bold text-gray-800">
+                        بدون مغزیجات
+                    </span>
+
+                </button>
+
+                <ul id="list10" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select10a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون مغزیجات
+                    </li>
+                    <li onclick="select10b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با مغزیجات
+                    </li>
+                    <li onclick="select10c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر مغزیجات
+                    </li>
+                    <li onclick="select10d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        مغزیجات فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Dropdown 11 -->
+            <div class="dropdown relative">
+
+                <span class="absolute -top-2 right-3 bg-gray-50 px-1 text-xs text-gray-500 z-10 select-none">
+                    مقدار قیمه
+                </span>
+
+                <button type="button" onclick="toggle11()"
+                    class="drop-btn mt-4 w-full max-w-[400px] h-[52px] flex items-center justify-between border-2 border-emerald-600 rounded-xl px-4 bg-white text-right transition-colors">
+
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    <span id="text11" class="font-bold text-gray-800">
+                        بدون قیمه
+                    </span>
+
+                </button>
+
+                <ul id="list11" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50" rounded-lg
+                    overflow-hidden shadow-lg z-20 text-right">
+
+                    <li onclick="select11a()" class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                        بدون قیمه
+                    </li>
+                    <li onclick="select11b()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        با قیمه
+                    </li>
+                    <li onclick="select11c()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        پر قیمه
+                    </li>
+                    <li onclick="select11d()" class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                        قیمه فراوان
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!-- Add to cart -->
+            <div class="order-section-dropdown w-full md:w-auto ">
+                <p id="customPrice" class="py-3 px-3 flex font-black text-2xl justify-center md:justify-start">
+                    <span>
+                        <img src="../../img/toman.svg" class="span-w ml-2 mr-1 mt-1" alt="">
+                    </span>
+                    <span id="customPriceValue">۷۵۰,۰۰۰</span>
+                </p>
+                <button class="text-center bg-green-800 text-white w-full md:px-[130px] py-3 pt-5 rounded-full md:ml-1">
+                    <a href="#toggleshow" onclick="addtocart()"> افزودن به سبد</a>
+                </button>
+            </div>
+
+        </div>
+        <div class="mr-40">
+            <div dir="rtl" class="w-full md:w-auto md:mr-20 order-settings">
+                <h2 class="text-2xl mr-5">
+                    تعیین مقدار سفارش
+                </h2>
+                <div class="bg-green-700 h-[5px] w-full max-w-[300px] mr-3 opacity-30"></div>
+                <div class="mt-5 mr-1">
+                    <div class="flex gap-4 items-start justify-center flex-wrap">
+                        <div class="text-center">
+                            <button id="small" class="rounded-full border-hov p-2 transition-colors bg-white">
+                                <img src="https://hariseeh.ir/wp-content/uploads/s.svg" class="w-[30px] h-[30px]"
+                                    alt="سایز کوچک">
+                            </button>
+                            <p class="text-gray-500 text-sm mt-1">
+                                کوچک
+                            </p>
+                        </div>
+                        <div class="text-center">
+
+                            <button id="medium" class="rounded-full border-hov p-2 transition-colors bg-white">
+                                <img src="https://hariseeh.ir/wp-content/uploads/m.svg" class="w-[30px] h-[30px]"
+                                    alt="سایز متوسط">
+                            </button>
+                            <p class="text-gray-500 text-sm mt-1">
+                                متوسط
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <button id="large" class="rounded-full border-hov p-2 transition-colors bg-white">
+                                <img src="https://hariseeh.ir/wp-content/uploads/l.svg" class="w-[30px] h-[30px]"
+                                    alt="سایز بزرگ">
+                            </button>
+
+                            <p class="text-gray-500 text-sm mt-1">
+                                بزرگ
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <button id="xl" class="rounded-full border-hov p-2 transition-colors bg-white">
+                                <img src="https://hariseeh.ir/wp-content/uploads/2xl.svg" class="w-[30px] h-[30px]"
+                                    alt="سایز خیلی بزرگ">
+                            </button>
+                            <p class="text-gray-500 text-sm mt-1">
+                                خیلی بزرگ
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <button id="more" class="rounded-full border-hov p-2 transition-colors bg-white">
+                                <img src="https://hariseeh.ir/wp-content/uploads/3c.svg" class="w-[30px] h-[30px]"
+                                    alt="پرس بیشتر">
+                            </button>
+                            <p class="text-gray-500 text-sm mt-1">
+                                پرس بیشتر
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-left text-xl mt-4 ml-3 suitable">
+                        مناسب برای ۳ نفر
+                    </p>
+                    <fieldset id="moreCustom"
+                        class="hidden mt-4 relative border-2 border-gray-300 rounded-xl px-3 pt-1 pb-3 flex items-center gap-2 justify-center"
+                        dir="rtl">
+                        <legend class="px-2 text-xs text-gray-500">تعیین مقدار دلخواه (Kg)</legend>
+                        <button type="button" onclick="changeMore(-0.5)"
+                            class="px-3 py-1 bg-gray-200 rounded-full text-lg">-</button>
+                        <span id="moreValue" class="px-4 font-bold">2.5 کیلو</span>
+                        <button type="button" onclick="changeMore(0.5)"
+                            class="px-3 py-1 bg-gray-200 rounded-full text-lg">+</button>
+                    </fieldset>
+
+                    <div class="dropdown relative w-full max-w-sm mt-20 ">
+                        <fieldset id="bgchange" class="relative border-2 border-gray-300 rounded-xl px-3 pt-1 pb-3 ">
+                            <legend class="px-2 text-xs text-gray-500">سبک سرو های پیشنهادی</legend>
+
+                            <button type="button" onclick="toggle13(),change()"
+                                class="w-full flex items-center justify-between">
+
+                                <span id="text13" class="font-bold text-gray-800">هریسه خالص(بدون افزودنی)</span>
+                                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                        </fieldset>
+
+                        <ul id="list13" class="hidden absolute top-full mt-1 w-full max-w-[400px] bg-emerald-50"
+                            rounded-lg overflow-hidden shadow-lg z-20 text-right">
+                            <li onclick="select13a()"
+                                class="px-4 py-2.5 cursor-pointer bg-blue-600 text-white font-medium">
+                                هریسه خالص (بدون افزودنی)
+                            </li>
+                            <li onclick="select13b()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                امضای هریسه(ویژه)
+                            </li>
+                            <li onclick="select13c()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                اصالت جنوبی (مخصوص)
+                            </li>
+                            <li onclick="select13d()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                طعم طهرون(کلاسیک)
+                            </li>
+                            <li onclick="select13e()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                عطر اشنا(کلاسیکِ شیرین)
+                            </li>
+                            <li onclick="select13f()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                عیار کهن(اصیل و بدون شکر)
+                            </li>
+                            <li onclick="select13g()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                حلاوتِ نیشکر(طعم کاراملی)
+                            </li>
+                            <li onclick="select13h()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                سنت خراسان(قیمه نمکی)
+                            </li>
+                            <li onclick="select13i()"
+                                class="px-4 py-2.5 cursor-pointer hover:bg-emerald-100 text-gray-700">
+                                معجون دربار(پر انرژی)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="toggleshow"
+        class=" hidden flex mb-50 mx-auto flex-col lg:flex-row flex-wrap justify-between items-start gap-8 md:gap-16 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1400px] order-container">
+        <div class="order-section w-full text-center py-8" id="togglef" dir="rtl">
+            <p class="font-black text-xl md:text-2xl text-center text-green-800 mb-6">
+                محصول به سبد اضافه شد
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-[600px] w-full mx-auto">
+                <button onclick="document.getElementById('bagModal').classList.remove('hidden');"
+                    class="bg-green-800 text-white px-8 py-3 rounded-xl font-medium w-full sm:w-auto min-w-[160px]">
+                    تکمیل سفارش
+                </button>
+
+                <button onclick="location.reload()"
+                    class="bg-slate-100 text-gray-700 px-8 py-3 rounded-xl font-medium w-full sm:w-auto min-w-[180px]">
+                    افزودن محصول دیگر
+                </button>
+            </div>
+            <p class="text-gray-500 text-sm mt-6 text-center">
+                هر تعداد خواستید اضافه کنید و بعد بروید برای تکمیل سفارش.
+            </p>
+
+        </div>
+
+    </div>
+    </div>
+
+    <!-- shopping cart -->
+
+    <section>
+
+    </section>
+
+    <div class="w-full min-h-[400px] mt-10 bg-[#1F3933] py-10">
+        <div dir="rtl" class="px-4 sm:px-6 md:px-12 lg:px-24 xl:px-[230px]">
+            <div class="w-15 h-15 rounded-full hover:text-white hover:bg-gray-600 transition cursor-default bg-white border-2 border-dotted flex items-center justify-center"
+                dir="ltr">
+                <p class="text-3xl pt-3">5</p>
+            </div>
+            <p class="text-gray-500 text-right cursor-default">امتیاز محصول</p>
+
+            <div class="w-full flex" id="top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-amber-300">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-amber-300">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-amber-300">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-amber-300">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-amber-300">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                </svg>
+            </div>
+
+            <p class="max-w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] pt-8 text-white/75 text-lg">
+                حلیمی نرم و ابریشمی که بافت لطیفش آرام روی زبان می‌نشیند و عطر
+                دلنشینش فضای صبح را پر می‌کند. مزه‌ای که
+                با طعم مطبوعش تجربه‌ای آرام و لذت‌بخش برای شروع روزتان می‌سازد.
+            </p>
+
+            <div class="flex">
+                <i class="fas fa-concierge-bell text-white text-2xl pt-7 pl-3"></i>
+                <p class="max-w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] pt-8 text-white/75 text-lg">
+                    گندم مخصوص، گوشت گوسفندی تازه، آب تصفیه شده، نمک و کمی ادویه
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <button class="border-2 bg-transparent border rounded-2xl text-white mt-3 h-10 w-full sm:w-70"><a
+                        href="#">جزئیات بیشتر و
+                        اطلاعات تغذیه ای</a></button>
+                <button class="bg-transparent border-2 rounded-2xl text-white mt-3 h-10 w-full sm:w-40"><a
+                        href="#">نظرات
+                        مشتریان</a></button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="w-full h-1 bg-amber-700">
+    </div>
+
+    <section class="bottom-0 left-0">
+        <div class="w-full h-1 bg-amber-700  left-0">
+        </div>
+        <footer dir="rtl" class="w-full bg-black border-t-[5px] border-[#DA6D57]">
+            <div class="mx-auto w-full max-w-[1200px] px-5 pb-[20px] pt-[50px] max-md:p-5">
+                <div class="flex flex-wrap items-center justify-between gap-10 text-right">
+
+            <div class="flex flex-wrap gap-10 lg:gap-20 xl:gap-32 text-right">
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">با هریسه</li>
+                    <li class="mb-[5px]">فرصت های شغلی</li>
+                    <li class="mb-[5px]">اخذ نمایندگی</li>
+                    <li class="mb-[5px]">تماس با هریسه</li>
+                    <li class="mb-[5px]">مجله هریسه</li>
+                </ul>
+
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">خدمات مشتریان</li>
+                    <li class="mb-[5px]">رویه های خرید و سفارش</li>
+                    <li class="mb-2 ">پرسش های متداول </li>
+                    <li class="mb-[5px]">قوانین و مقررات</li>
+                    <li class="mb-[5px]">حریم خصوصی و امنیت</li>
+                </ul>
+
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">همراه ما باشید!</li>
+                    <li class="mb-[5px]"><span><i class="fab fa-instagram ml-[15px] text-white"></i></span>اینستاگرام</li>
+                    <li class="mb-[5px]"><span><i class="fab fa-threads ml-[15px] text-white"></i></span> تردز</li>
+                    <li class="mb-[5px]"><span><i class="far fa-grin-wink ml-[15px] text-white"></i>پلتفرم خرید باسلام</span></li>
+                </ul>
+            </div>
+
+
+            <div class="flex flex-wrap items-center gap-6 max-md:justify-center">
+                <img src="../../img/unnamed-1-1.png" class="w-[75px] min-[1367px]:w-[100px]" alt="اینماد۱">
+                <img src="../../img/logo.png" class="w-[75px] min-[1367px]:w-[100px]" alt="اینماد۱">
+
+            </div>
+            <div class="w-full border-t border-[rgba(255,255,255,0.25)] mt-20">
+                <div class="flex flex-col sm:flex-row items-center justify-between pt-5 gap-3">
+                    <p class="text-[14px] md:text-[13px] font-light text-[rgba(255,255,255,0.39)] text-center sm:text-right">
+                        1405@ کلیه حقوق این سایت متعلق به شرکت تجارت الکترونیک هوبر آوا است.
+                    </p>
+                    <img src="../../img/hariseeh.png" class="w-[70px] md:w-[120px]" alt="">
+                </div>
+            </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- بگ سبد خرید -->
+    <div id="bagModal"
+        class="hidden fixed inset-0 z-[100] flex items-start justify-center bg-stone-900/40 p-4 sm:items-center">
+        <div class="flex max-h-full w-full max-w-md">
+            <div class="flex w-full flex-col overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-stone-200">
+                <div class="head flex items-center justify-between gap-3 border-b border-stone-200 px-5 py-4">
+                    <div dir="rtl">
+                        <h2 class="text-lg font-bold text-stone-900">سبد خرید</h2>
+                        <p class="text-sm text-stone-500"><span id="bagCount2">۰</span> کالا</p>
+                    </div>
+                    <button onclick="document.getElementById('bagModal').classList.add('hidden')"
+                        class="grid h-9 w-9 place-items-center rounded-full text-stone-500 hover:bg-stone-100">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div id="bagShop2" class="flex-1 overflow-y-auto"></div>
+                <div id="bagEmpty2" class="px-5 py-12 text-center">
+                    <i class="fa-solid fa-cart-shopping mb-3 text-3xl text-stone-300"></i>
+                    <p class="text-sm font-medium text-stone-700">سبد خرید شما خالی است</p>
+                </div>
+                <div id="bagCheckout2" class="hidden space-y-3 border-t border-stone-200 bg-stone-50 px-5 py-4">
+                    <div class="flex items-baseline justify-between">
+                        <span class="text-sm text-stone-600">جمع کل</span>
+                        <p class="text-xl font-bold text-stone-900"><span id="bagPrice2">۰</span> <span
+                                class="text-sm font-medium text-stone-500">تومان</span></p>
+                    </div>
+                    <a href=""
+                        class="flex items-center justify-center rounded-xl bg-green-800 px-5 py-3 text-sm font-bold text-white">ادامه
+                        و پرداخت</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Sefaresh/asset/dropdownjs.js"></script>
+    <script src="../Sefaresh/asset/cart.js"></script>
+    <script>
+        // دکمه سبد خرید - باز کردن بگ
+        document.addEventListener("DomContentLoaded", () => {
+            let shopBtn = document.querySelector('a.flex:has(img[src*="shopping-bag"])');
+            if (shopBtn) {
+                shopBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.getElementById("bagModal").classList.remove("hidden");
+                    if (typeof updateBag2 === 'function') updateBag2();
+                });
+            }
+        });
+        function updateBag2() {
+            let bagShop = document.getElementById("bagShop2");
+            if (!bagShop) return;
+            let count = bagShop.children.length;
+            let bagCount = document.getElementById("bagCount2");
+            let bagPrice = document.getElementById("bagPrice2");
+            let bagEmpty = document.getElementById("bagEmpty2");
+            let bagCheckout = document.getElementById("bagCheckout2");
+            if (bagCount) bagCount.innerText = count.toLocaleString("fa-IR");
+            let priceText = document.getElementById("customPriceValue") ? document.getElementById("customPriceValue").innerText.replace(/[^0-9۰-۹]/g, "") : "750000";
+            priceText = priceText.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
+            let total = parseInt(priceText || 0) * (count || 1);
+            if (count > 0 && bagPrice) bagPrice.innerText = total.toLocaleString("fa-IR");
+            if (count > 0) {
+                if (bagCheckout) bagCheckout.classList.remove("hidden");
+                if (bagEmpty) bagEmpty.classList.add("hidden");
+            } else {
+                if (bagCheckout) bagCheckout.classList.add("hidden");
+                if (bagEmpty) bagEmpty.classList.remove("hidden");
+            }
+            let cq = document.getElementById("cartquantity");
+            if (cq) cq.innerText = count > 0 ? count.toLocaleString("fa-IR") : "";
+        }
+        // وصل به addtocart اصلی
+        const _origAddToCart2 = window.addtocart;
+        window.addtocart = function () {
+            if (typeof _origAddToCart2 === 'function') _origAddToCart2();
+            let bagShop = document.getElementById("bagShop2");
+            let name = "هریسه گندم اصیل";
+            let priceText = document.getElementById("customPriceValue") ? document.getElementById("customPriceValue").innerText : "۷۵۰,۰۰۰";
+            let sizeText = document.getElementById("text13") ? document.getElementById("text13").innerText : "";
+            let div = document.createElement("div");
+            div.className = "flex items-center justify-between gap-3 border-b border-stone-100 px-5 py-4";
+            div.innerHTML = `<div class="flex items-center gap-3"><div class="grid h-12 w-12 place-items-center rounded-xl bg-stone-100"><i class="fa-solid fa-bowl-rice text-stone-400"></i></div><div><p class="text-sm font-bold">${name}</p><p class="text-xs text-stone-500">${sizeText} - ${priceText} تومان</p></div></div><button onclick="this.parentElement.remove(); updateBag2()" class="text-stone-400 hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>`;
+            bagShop.appendChild(div);
+            document.getElementById("bagModal").classList.remove("hidden");
+            updateBag2();
+        }
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+<script src="../../src/typed.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>هریسه گندم اصیل | هریسه</title>
+
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="icon" href="https://hariseeh.ir/wp-content/uploads/Screenshot-2024-12-18-001736-min.svg">
+    <link rel="stylesheet" href="../src/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <div dir="rtl"
+        class="min-h-[60px] w-full bg-green-800 flex flex-wrap items-center justify-between px-10 py-3 gap-4">
+        <p class="text-white text-lg md:text-2xl">
+            250,000 هزار تومان اعتبار خرید
+            <span id="typed-text" class="text-amber-600 text-sm md:text-base block md:inline">با عضویت در سایت</span>
+        </p>
+        <button class="bg-green-950 px-10 py-2 rounded-3xl">
+            <a href="#" class="text-white">ثبت نام</a>
+        </button>
+    </div>
+
+    <nav>
+        <div class="flex items-center justify-between">
+            <div dir="ltr">
+                <ul class="flex list-none gap-8 ml-10 respons-hide">
+                    <li class="border border-green-200 rounded-lg hover:bg-green-100 transition-colors ">
+                        <a href="#" class="py-1 px-3 text-green-600 transition-colors flex">
+                            سبد خرید
+                            <span>
+                                <img src="../img/icons8-shopping-bag-32.png" class="w-4 mt-1 ml-2" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mt-1">
+                        <a href="../pages/Login/index.html" class="text-black hover:text-amber-700 transition-colors">
+                            ورود/عضویت
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div dir="rtl" class="my-12 mr-24 flex items-center nav-right">
+                <img src="../img/hariseeh.png" class="w-25 harise-img" alt="">
+                <ul class="flex list-none gap-8 mt-2 mr-3 respons-hide">
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            منو
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            کارت هدیه
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-amber-700 transition-colors">
+                            شعب
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-[#1F3933] w-full py-8 px-4 md:px-10">
+        <div dir="rtl" class="max-w-[1100px] mx-auto">
+            <p class="text-2xl md:text-3xl text-white font-bold">
+                پنل کاربری
+            </p>
+            <p class="text-white/70 text-sm mt-2 flex items-center gap-2">
+                <i class="far fa-id-card"></i>
+                UserID
+            </p>
+        </div>
+    </div>
+
+    <div dir="rtl" class="max-w-[1100px] mx-auto px-4 md:px-10">
+        <ul class="divide-y divide-stone-200">
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right ">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="far fa-user text-stone-500 w-5 text-center"></i>
+                        اطلاعات کاربری
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  text-sm text-stone-500">
+                    <fieldset
+                        class="mt-2 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                        <legend class="bg-white px-2">
+                            <span class="text-center ">شماره موبایل <span class="text-red-600">*</span></span>
+                        </legend>
+                        <input id="firstname" type="text" dir="rtl" placeholder="نام"
+                            class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                    </fieldset>
+
+                    <fieldset
+                        class="mt-4 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                        <legend class="bg-white px-2">
+                            <span class="text-center">نام خانوادگی (اختیاری)</span>
+                        </legend>
+                        <input id="lastname" type="text" dir="rtl" placeholder="نام خانوادگی"
+                            class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                    </fieldset>
+                    <fieldset
+                        class="mt-4 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                        <legend class="bg-white px-2">
+                            <span class="text-center">ایمیل (اختیاری)</span>
+                        </legend>
+                        <input id="email" type="email" dir="ltr" placeholder="example@mail.com"
+                            class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                    </fieldset>
+
+
+                    <fieldset
+                        class="mt-4 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                        <legend class="bg-white px-2">
+                            <span class="text-center">شماره موبایل <span class="text-red-600">*</span></span>
+                        </legend>
+                        <input id="phone" type="tel" dir="rtl" placeholder="۰۹۱۲۳۴۵۶۷۸۹"
+                            class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                    </fieldset>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="fas fa-location-dot text-stone-500 w-5 text-center"></i>
+                        آدرس‌ها
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  -5 text-sm text-stone-500 ">
+                    <div id="addr-empty"
+                        class="rounded-xl border border-green-700 px-4 py-5 text-center text-stone-500">
+                        هیچ آدرسی ثبت نشده
+                    </div>
+
+                    <ul id="addr-list" class="mt-4 space-y-2"></ul>
+
+                    <button type="button" onclick="openAddrModal()"
+                        class="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-green-800 py-3 text-sm font-bold text-white">
+                        <i class="fas fa-plus text-xs"></i>
+                        افزودن آدرس
+                    </button>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="far fa-rectangle-list text-stone-500 w-5 text-center"></i>
+                        سفارشات
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  -5 text-sm text-stone-500">
+                    <div id="order-empty"
+                        class="rounded-xl border border-green-700 px-4 py-5 text-center text-stone-500">
+                        هیچ سفارشی ثبت نشده
+                    </div>
+
+                    <ul id="order-list" class="mt-4 space-y-2"></ul>
+
+                    <a href="../pages/menu/"
+                        class="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-green-800 py-3 text-sm font-bold text-white cursor-pointer">
+                        <i class="fas fa-cart-shopping text-xs"></i>
+                        ثبت سفارش جدید
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="fas fa-gift text-stone-500 w-5 text-center"></i>
+                        کارت هدیه و کیف پول
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  -5 text-sm text-stone-500">
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center gap-4 py-6 md:py-10"> <button type="button" id="tab-sent"
+                                onclick="switchGiftTab('sent')"
+                                class="rounded-full bg-green-800 px-4 py-2.5 text-xs font-bold text-white">
+                                ارسالی‌ها (<span id="sent-count">۰</span>)
+                            </button>
+                            <button type="button" id="tab-received" onclick="switchGiftTab('received')"
+                                class="text-xs text-stone-500 py-2.5">
+                                دریافتی‌ها (<span id="received-count">۰</span>)
+                            </button>
+                        </div>
+                        <span class="rounded-lg bg-emerald-50 px-3 py-1.5 text-xs text-stone-600">
+                            موجودی: <span id="wallet-balance" class="font-bold">۰</span> تومان
+                        </span>
+                    </div>
+
+                    <ul id="gift-list" class="mt-4 space-y-2"></ul>
+
+                    <div id="gift-empty"
+                        class="mt-4 rounded-xl border border-green-700 px-4 py-5 text-center text-stone-500">
+                        <span id="gift-empty-text">کارت ارسالی ندارید</span>
+                    </div>
+
+                    <button type="button" onclick="buyGiftCard()"
+                        class="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-green-800 py-3 text-sm font-bold text-white">
+                        <i class="fas fa-seedling text-xs"></i>
+                        خرید کارت هدیه
+                    </button>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="far fa-comment text-stone-500 w-5 text-center"></i>
+                        نظرات من
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  -5">
+                    <div id="review-empty"
+                        class="rounded-xl border border-green-700 px-4 py-5 text-center text-stone-500">
+                        شما هنوز نظری ثبت نکرده‌اید
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="fas fa-headset text-stone-500 w-5 text-center"></i>
+                        پشتیبانی
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  -5 text-sm text-stone-500">
+                    <div class="flex gap-3">
+                        <fieldset
+                            class="mt-2 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                            <legend class="bg-white px-2">
+                                <span class="text-center">موضوع<span class="text-red-600">*</span></span>
+                            </legend>
+                            <input id="sup-subject" type="text" dir="rtl" placeholder="موضوع پیام"
+                                class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                        </fieldset>
+                        <fieldset
+                            class="mt-2 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                            <legend class="bg-white px-2">
+                                <span class="text-center">نام و نام خانوادگی<span class="text-red-600">*</span></span>
+                            </legend>
+                            <input id="sup-name" type="text" dir="rtl" placeholder="نام و نام خانوادگی"
+                                class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                        </fieldset>
+                    </div>
+                    <div class="flex gap-3">
+                        <fieldset
+                            class="mt-2 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                            <legend class="bg-white px-2">
+                                <span class="text-center">شماره تماس<span class="text-red-600">*</span></span>
+                            </legend>
+                            <input id="sup-phone" type="tel" inputmode="numeric" dir="rtl" placeholder="۰۹۱۲۳۴۵۶۷۸۹"
+                                class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                        </fieldset>
+                        <fieldset
+                            class="mt-2 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                            <legend class="bg-white px-2">
+                                <span class="text-center">ایمیل<span class="text-red-600">*</span></span>
+                            </legend>
+                            <input id="sup-email" type="email" dir="ltr" placeholder="example@mail.com"
+                                class="w-full bg-transparent text-left outline-none placeholder:text-gray-300 py-1">
+                        </fieldset>
+                    </div>
+                    <fieldset
+                        class="mt-2 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                        <legend class="bg-white px-2">
+                            <span class="text-center">شماره سفارش<span class="text-red-600">*</span></span>
+                        </legend>
+                        <input id="sup-order" type="text" inputmode="numeric" dir="rtl" placeholder="شماره سفارش"
+                            class="w-full bg-transparent text-right outline-none placeholder:text-gray-300 py-1">
+                    </fieldset>
+                    <fieldset
+                        class="mt-2 flex min-h-[100px] w-full rounded-lg border border-green-600 bg-white px-3 py-3 focus-within:ring-1 focus-within:ring-green-600">
+                        <legend class="bg-white px-2">
+                            <span class="text-center">متن پیام<span class="text-red-600">*</span></span>
+                        </legend>
+                        <textarea id="sup-message" rows="3" dir="rtl" placeholder="متن پیام خود را بنویسید..."
+                            class="w-full bg-transparent text-right outline-none placeholder:text-gray-300"></textarea>
+                    </fieldset>
+                    <button type="button" onclick="sendSupport()"
+                        class="mt-4 w-full rounded-xl bg-green-800 py-3 text-sm font-bold text-white">
+                        ارسال پیام
+                    </button>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="fas fa-puzzle-piece text-stone-500 w-5 text-center"></i>
+                        ثبت ایده‌ها و نظرات
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  py-5 text-stone-600">
+                    <svg width="60" class="mx-auto mb-3" height="60" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="bulbGradient" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#FFD54F"></stop>
+                                <stop offset="100%" stop-color="#FFB300"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path
+                            d="M9 21h6a1 1 0 0 0 1-1v-1h-8v1a1 1 0 0 0 1 1zm3-19a7 7 0 0 0-4.54 12.3c.74.64 1.04 1.29 1.04 1.7V17h7v-1c0-.41.31-1.06 1.04-1.7A7 7 0 0 0 12 2z"
+                            fill="url(#bulbGradient)"></path>
+                        <path d="M8 17h8v1a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-1z" fill="#424242"></path>
+                    </svg>
+                    <p class="text-center text-2xl pb-3">ثبت ایده‌ها و نظرات شما
+                    </p>
+                    <p class="text-center" dir="rtl">ما همیشه به دنبال بهتر شدن هستیم و باور داریم بهترین ایده‌ها از دل
+                        تجربه‌های
+                        شما می‌آیند. اگر پیشنهادی برای بهبود خدمات یا محصول دارید، همین‌جا با ما در میان بگذارید.
+                        ایده‌های ارزشمند شما نه تنها در بهبود تجربه همه کاربران نقش دارند، بلکه ممکن است در آینده به
+                        اجرا درآیند. به پاس قدردانی، برای ایده‌های برگزیده که عملی شوند، جوایزی در نظر گرفته خواهد شد
+                    </p>
+                    </p>
+                    <a href="../pages/menu/"
+                        class="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-green-800 py-3 text-sm font-bold text-white cursor-pointer">
+                        <i class="fas fa-cart-shopping text-xs"></i>
+                        شروع
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <button type="button" onclick="togglePanel(this)"
+                    class="w-full flex items-center justify-between py-4 text-right">
+                    <span
+                        class="flex items-center gap-3 text-stone-500 font-medium hover:text-stone-800 transition-colors">
+                        <i class="fas fa-right-from-bracket text-stone-500 w-5 text-center"></i>
+                        خروج از حساب کاربری
+                    </span>
+                    <span
+                        class="panel-chevron grid h-7 w-7 place-items-center rounded-full border border-green-700 text-green-700 transition-transform">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </span>
+                </button>
+                <div class="panel-body hidden  -5 t gap-4 w-full">
+                    <p class="text-stone-500 text-right justify-end ext-m ">
+                        با خروج از حساب کاربری، امکان مشاهده اطلاعات کاربری و سفارش‌ها وجود ندارد و برای ثبت سفارش باید
+                        دوباره به حساب کاربری وارد شوید.
+                    </p>
+                    <a href="" class="block text-red-600 text-left text-lg pb-6">خروج از حساب</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <section class=" bottom-0 left-0">
+        <div class="w-full h-1 bg-amber-700  left-0">
+        </div>
+        <footer dir="rtl" class="w-full bg-black border-t-[5px] border-[#DA6D57]">
+            <div class="mx-auto w-full max-w-[1200px] px-5 pb-[20px] pt-[50px] max-md:p-5">
+                <div class="flex flex-wrap items-center justify-between gap-10 text-right">
+
+            <div class="flex flex-wrap gap-10 lg:gap-20 xl:gap-32 text-right">
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">با هریسه</li>
+                    <li class="mb-[5px]">فرصت های شغلی</li>
+                    <li class="mb-[5px]">اخذ نمایندگی</li>
+                    <li class="mb-[5px]">تماس با هریسه</li>
+                    <li class="mb-[5px]">مجله هریسه</li>
+                </ul>
+
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">خدمات مشتریان</li>
+                    <li class="mb-[5px]">رویه های خرید و سفارش</li>
+                    <li class="mb-2 ">پرسش های متداول </li>
+                    <li class="mb-[5px]">قوانین و مقررات</li>
+                    <li class="mb-[5px]">حریم خصوصی و امنیت</li>
+                </ul>
+
+                <ul class="text-[14px] font-light text-[rgba(255,255,255,0.79)] max-md:w-full">
+                    <li class="text-[#DA6D57] mb-2 text-[18px] font-medium">همراه ما باشید!</li>
+                    <li class="mb-[5px]"><span><i class="fab fa-instagram ml-[15px] text-white"></i></span>اینستاگرام</li>
+                    <li class="mb-[5px]"><span><i class="fab fa-threads ml-[15px] text-white"></i></span> تردز</li>
+                    <li class="mb-[5px]"><span><i class="far fa-grin-wink ml-[15px] text-white"></i>پلتفرم خرید باسلام</span></li>
+                </ul>
+            </div>
+
+
+            <div class="flex flex-wrap items-center gap-6 max-md:justify-center">
+                <img src="../img/unnamed-1-1.png" alt="اینماد۱">
+                <img src="../img/logo.png" alt="اینماد۱">
+
+            </div>
+            <div class="w-full border-t border-[rgba(255,255,255,0.25)] mt-20">
+                <div class="flex items-center justify-between pt-5">
+                    <p class="text-[14px] md:text-[13px] font-light text-[rgba(255,255,255,0.39)] text-center sm:text-right">
+                        1405@ کلیه حقوق این سایت متعلق به شرکت تجارت الکترونیک هوبر آوا است.
+                    </p>
+                    <img src="../img/hariseeh.png" class="w-[70px] md:w-[120px]" alt="">
+                </div>
+            </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <div id="addrModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-stone-900/50 p-4">
+        <div class="relative w-full max-w-lg rounded-2xl bg-white p-5 max-h-[90vh] overflow-y-auto">
+            <button type="button" onclick="closeAddrModal()" aria-label="بستن"
+                class="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-white text-stone-600 shadow hover:bg-stone-100">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <fieldset class="mt-2 w-full">
+                <legend class="bg-white px-2 text-sm">
+                    <span>موقعیت روی نقشه <span class="text-red-600">*</span></span>
+                </legend>
+                <div class="relative">
+                    <div id="addrMap" class="h-56 w-full rounded-xl border border-green-600"></div>
+                    <button type="button" onclick="locateMe()"
+                        class="absolute bottom-3 right-3 flex items-center gap-1 rounded-lg bg-white px-2 py-1 text-xs text-stone-700 shadow">
+                        <i class="fas fa-location-crosshairs"></i>
+                        موقعیت من
+                    </button>
+                </div>
+            </fieldset>
+
+            <fieldset
+                class="mt-4 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                <legend class="bg-white px-2 text-sm">
+                    <span>نشانی <span class="text-red-600">*</span></span>
+                </legend>
+                <input id="m-addr-auto" type="text" dir="rtl" readonly
+                    placeholder="با انتخاب موقعیت روی نقشه به صورت خودکار تکمیل می‌شود"
+                    class="w-full bg-transparent text-right text-sm outline-none placeholder:text-gray-400">
+            </fieldset>
+
+            <fieldset
+                class="mt-4 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                <legend class="bg-white px-2 text-sm">
+                    <span>جزئیات آدرس <span class="text-red-600">*</span></span>
+                </legend>
+                <input id="m-addr-detail" type="text" dir="rtl" placeholder="مثال: پلاک 3، طبقه 4، واحد 15"
+                    class="w-full bg-transparent text-right text-sm outline-none placeholder:text-gray-400">
+            </fieldset>
+
+            <fieldset
+                class="mt-4 flex min-h-14 w-full items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                <legend class="bg-white px-2 text-sm">
+                    <span>عنوان آدرس <span class="text-red-600">*</span></span>
+                </legend>
+                <input id="m-addr-title" type="text" dir="rtl" placeholder="مثال: خانه"
+                    class="w-full bg-transparent text-right text-sm outline-none placeholder:text-gray-400">
+            </fieldset>
+
+            <div class="mt-4 flex gap-3">
+                <fieldset
+                    class="flex min-h-14 flex-1 items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                    <legend class="bg-white px-2 text-xs">
+                        <span>نام تحویل گیرنده (اختیاری)</span>
+                    </legend>
+                    <input id="m-addr-name" type="text" dir="rtl" placeholder="مثال: مصطفی"
+                        class="w-full bg-transparent text-right text-sm outline-none placeholder:text-gray-400">
+                </fieldset>
+                <fieldset
+                    class="flex min-h-14 flex-1 items-center rounded-lg border border-green-600 bg-white px-3 focus-within:ring-1 focus-within:ring-green-600">
+                    <legend class="bg-white px-2 text-xs">
+                        <span>موبایل تحویل گیرنده (اختیاری)</span>
+                    </legend>
+                    <input id="m-addr-mobile" type="tel" inputmode="numeric" dir="ltr" placeholder="0912 345 6789"
+                        class="w-full bg-transparent text-left text-sm outline-none placeholder:text-gray-400">
+                </fieldset>
+            </div>
+
+            <button type="button" onclick="saveModalAddress()"
+                class="mt-5 w-full py-2 text-center text-sm font-bold text-rose-600 hover:text-rose-700">
+                ثبت آدرس
+            </button>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+    <script src="../src/typed.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        function togglePanel(btn) {
+            const body = btn.parentElement.querySelector(".panel-body");
+            const chevron = btn.querySelector(".panel-chevron");
+            body.classList.toggle("hidden");
+            chevron.classList.toggle("rotate-180");
+        }
+
+        let addresses = [];
+        let addrMap = null;
+        let addrMarker = null;
+        let addrLat = 35.6997;
+        let addrLng = 51.3378;
+
+        function openAddrModal() {
+            document.getElementById("addrModal").classList.remove("hidden");
+            setTimeout(initAddrMap, 50);
+        }
+
+        function closeAddrModal() {
+            document.getElementById("addrModal").classList.add("hidden");
+        }
+
+        function initAddrMap() {
+            if (addrMap) {
+                addrMap.invalidateSize();
+                return;
+            }
+            addrMap = L.map("addrMap").setView([addrLat, addrLng], 15);
+            L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution: "&copy; OpenStreetMap"
+            }).addTo(addrMap);
+            addrMarker = L.marker([addrLat, addrLng]).addTo(addrMap);
+            addrMap.on("click", function (e) {
+                addrLat = e.latlng.lat;
+                addrLng = e.latlng.lng;
+                addrMarker.setLatLng([addrLat, addrLng]);
+                fetch("https://nominatim.openstreetmap.org/reverse?format=json&accept-language=fa&lat=" + addrLat + "&lon=" + addrLng)
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) {
+                        if (data && data.display_name) {
+                            document.getElementById("m-addr-auto").value = data.display_name;
+                        }
+                    })
+                    .catch(function () { });
+            });
+        }
+
+        function locateMe() {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                addrMap.setView([pos.coords.latitude, pos.coords.longitude], 16);
+                addrMarker.setLatLng([pos.coords.latitude, pos.coords.longitude]);
+            });
+        }
+
+        function saveModalAddress() {
+            const auto = document.getElementById("m-addr-auto").value.trim();
+            const detail = document.getElementById("m-addr-detail").value.trim();
+            const title = document.getElementById("m-addr-title").value.trim();
+            const name = document.getElementById("m-addr-name").value.trim();
+            const mobile = document.getElementById("m-addr-mobile").value.trim();
+
+            if (!auto || !detail || !title) {
+                alert("نشانی، جزئیات آدرس و عنوان آدرس لازم است");
+                return;
+            }
+
+            addresses.push({ title, auto, detail, name, mobile, lat: addrLat, lng: addrLng });
+            renderAddresses();
+            closeAddrModal();
+        }
+
+        function removeAddress(i) {
+            addresses.splice(i, 1);
+            renderAddresses();
+        }
+
+        function sendSupport() {
+            const subject = document.getElementById("sup-subject").value.trim();
+            const name = document.getElementById("sup-name").value.trim();
+            const phone = document.getElementById("sup-phone").value.trim();
+            const email = document.getElementById("sup-email").value.trim();
+            const order = document.getElementById("sup-order").value.trim();
+            const message = document.getElementById("sup-message").value.trim();
+
+            if (!subject || !name || !phone || !email || !order || !message) {
+                alert("همه فیلدهای ستاره‌دار لازم است");
+                return;
+            }
+
+            alert("پیام شما با موفقیت ارسال شد");
+            document.getElementById("sup-subject").value = "";
+            document.getElementById("sup-name").value = "";
+            document.getElementById("sup-phone").value = "";
+            document.getElementById("sup-email").value = "";
+            document.getElementById("sup-order").value = "";
+            document.getElementById("sup-message").value = "";
+        }
+
+        let giftTab = "sent";
+        let sentGifts = [];
+        let receivedGifts = [];
+        let walletBalance = 0;
+
+        function toFa(n) {
+            return n.toLocaleString("fa-IR");
+        }
+
+        function switchGiftTab(tab) {
+            giftTab = tab;
+            const sentBtn = document.getElementById("tab-sent");
+            const receivedBtn = document.getElementById("tab-received");
+            if (tab === "sent") {
+                sentBtn.className = "rounded-full bg-green-800 px-4 py-2.5 text-xs font-bold text-white";
+                receivedBtn.className = "text-xs text-stone-500";
+            } else {
+                receivedBtn.className = "rounded-full bg-green-800 px-4 py-2.5 text-xs font-bold text-white";
+                sentBtn.className = "text-xs text-stone-500";
+            }
+            renderGifts();
+        }
+
+        function buyGiftCard() {
+            alert("به‌زودی: صفحه خرید کارت هدیه");
+        }
+
+        function renderGifts() {
+            const list = document.getElementById("gift-list");
+            const empty = document.getElementById("gift-empty");
+            const emptyText = document.getElementById("gift-empty-text");
+            const items = giftTab === "sent" ? sentGifts : receivedGifts;
+            document.getElementById("sent-count").innerText = toFa(sentGifts.length);
+            document.getElementById("received-count").innerText = toFa(receivedGifts.length);
+            document.getElementById("wallet-balance").innerText = toFa(walletBalance);
+            let html = "";
+            for (let i = 0; i < items.length; i++) {
+                html += '<li class="flex items-center justify-between rounded-xl bg-stone-100 px-4 py-3 text-right">';
+                html += '<div><p class="font-bold text-stone-800">' + items[i].title + '</p>';
+                html += '<p class="text-xs text-stone-500">' + items[i].amount + '</p></div></li>';
+            }
+            list.innerHTML = html;
+            if (items.length > 0) {
+                empty.classList.add("hidden");
+            } else {
+                empty.classList.remove("hidden");
+                emptyText.innerText = giftTab === "sent" ? "کارت ارسالی ندارید" : "کارت دریافتی ندارید";
+            }
+        }
+
+        renderGifts();
+
+        function renderAddresses() {
+            const list = document.getElementById("addr-list");
+            const empty = document.getElementById("addr-empty");
+            let html = "";
+            for (let i = 0; i < addresses.length; i++) {
+                const a = addresses[i];
+                html += '<li class="flex items-center justify-between rounded-xl bg-stone-100 px-4 py-3 text-right">';
+                html += '<div><p class="font-bold text-stone-800">' + a.title + '</p>';
+                html += '<p class="text-xs text-stone-500">' + a.auto + "، " + a.detail + '</p></div>';
+                html += '<button onclick="removeAddress(' + i + ')" class="text-stone-400 hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>';
+                html += '</li>';
+            }
+            list.innerHTML = html;
+            if (addresses.length > 0) {
+                empty.classList.add("hidden");
+            } else {
+                empty.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+
+</html>

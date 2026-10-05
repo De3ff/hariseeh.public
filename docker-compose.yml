@@ -1,0 +1,14 @@
+# نسخه dev: بدون build، مستقیم پوشه جاری سرو می‌شود
+services:
+  web:
+    image: nginx:alpine
+    container_name: harisee-web
+    ports:
+      # دسترسی: http://harisee.local:7070
+      # اگه خواستی بدون پورت (http://harisee.local) باز بشه:
+      # 1) آپاچی رو خاموش کن: sudo systemctl stop apache2
+      # 2) خط زیر رو به "80:80" تغییر بده
+      - "7070:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped

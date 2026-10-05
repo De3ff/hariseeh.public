@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed inset-0 z-50 flex items-start justify-center bg-stone-900/40 p-4 sm:items-center">
+        <div class="flex max-h-full w-full max-w-md">
+            <div class="flex w-full flex-col overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-stone-200">
+
+                <!-- هدر (و جای لیست کالاها) -->
+                <div class="head flex items-center justify-between gap-3 border-b border-stone-200 px-5 py-4">
+                    <div dir="rtl">
+                        <h2 class="text-lg font-bold text-stone-900">سبد خرید</h2>
+                        <p class="text-sm text-stone-500"><span id="count">۰</span> کالا</p>
+                    </div>
+                    <div dir="ltr" class="flex items-center gap-2">
+
+                        <button onclick="closecart()" aria-label="بستن"
+                            class="grid h-9 w-9 place-items-center rounded-full text-stone-500 transition hover:bg-stone-100 hover:text-stone-900">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="" id="shop">
+
+                </div>
+                <!-- سبد خالی -->
+                <div id="emptybag" class="px-5 py-12 text-center">
+                    <i class="fa-solid fa-cart-shopping mb-3 text-3xl text-stone-300"></i>
+                    <p class="text-sm font-medium text-stone-700">سبد خرید شما خالی است</p>
+                    <p class="mt-1 text-sm text-stone-500">از بین محصولات، کالای مورد نظرتان را اضافه کنید.</p>
+                </div>
+
+                <!-- جمع و دکمه -->
+                <div class="space-y-3 border-t border-stone-200 bg-stone-50 px-5 py-4 hidden" id="checkout">
+                    <div class="flex items-baseline justify-between">
+                        <span class="text-sm text-stone-600">جمع کل</span>
+                        <p class="text-xl font-bold text-stone-900">
+                        <p id="price"></p>
+                        <span class="text-sm font-medium text-stone-500">تومان</span>
+                        </p>
+                    </div>
+                    <p class="text-xs text-stone-500">هزینه ارسال در مرحله بعد محاسبه می‌شود.</p>
+                    <a href=""
+                        class="flex items-center justify-center rounded-xl bg-indigo-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-800 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">
+                        ادامه و پرداخت
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    let shopelement = document.getElementById("shop");
+    let checkout = document.getElementById("checkout");
+    let emptybag = document.getElementById("emptybag");
+
+    if (shopelement.querySelector("div")) {
+        checkout.classList.remove("hidden");
+    } else {
+        checkout.style.toggle("hidden");
+        emptybag.classList.remove("hidden");
+    }
+</script>
+
+</html>
